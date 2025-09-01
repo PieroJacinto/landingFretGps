@@ -120,16 +120,21 @@ body::before {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--primary-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--neutral-medium);
-    font-size: 0.75rem;
     border: 2px solid var(--accent-blue-primary);
     box-shadow: var(--glow-blue);
+    overflow: hidden;
+    position: relative;
 }
 
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .header-info h1 {
     font-family: var(--font-display);
     font-size: 1.125rem;
@@ -720,20 +725,9 @@ body::before {
     text-align: center;
 }
 
-.photo-placeholder {
-    width: 250px;
-    height: 250px;
-    background: var(--primary-dark);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--neutral-medium);
-    font-style: italic;
-    border: 4px solid var(--accent-blue-primary);
-    box-shadow: var(--glow-blue);
-    margin: 0 auto;
+.instructor-img {
+    width: 200px;
+    height: 200px;
 }
 
 .instructor-name {
@@ -1135,6 +1129,160 @@ body::before {
     width: 32px;
     height: 32px;
     fill: white;
+}
+
+/* INSTRUCTOR HERO SECTION - ESTILO MODERNO */
+.instructor-hero {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+    padding: var(--space-2xl) 0;
+    position: relative;
+    text-align: center;
+}
+
+.instructor-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(244, 196, 48, 0.1) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.instructor-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--space-2xl);
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto var(--space-2xl);
+    position: relative;
+    z-index: 1;
+}
+
+.instructor-text {
+    text-align: left;
+}
+
+.instructor-label {
+    color: var(--accent-gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+}
+
+.instructor-name {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--neutral-light);
+    margin-bottom: var(--space-sm);
+    line-height: 1.1;
+}
+
+.instructor-subtitle {
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+}
+
+.instructor-description {
+    font-size: 1.125rem;
+    color: var(--neutral-medium);
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+.instructor-photo-new {
+    position: relative;
+    text-align: center;
+}
+
+.instructor-main-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid var(--accent-blue-primary);
+    box-shadow: 
+        var(--shadow-strong), 
+        0 0 40px rgba(74, 144, 226, 0.3);
+    transition: all 0.3s ease;
+}
+
+.instructor-main-img:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        var(--shadow-strong), 
+        0 0 60px rgba(74, 144, 226, 0.4),
+        0 0 40px rgba(244, 196, 48, 0.3);
+}
+
+/* CREDENTIALS BADGES */
+.credentials-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.credential-badge {
+    background: var(--primary-light);
+    border: 1px solid var(--accent-blue-primary);
+    border-radius: 50px;
+    padding: var(--space-sm) var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.credential-badge:hover {
+    background: var(--accent-blue-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--glow-blue);
+}
+
+.badge-icon {
+    font-size: 1.2rem;
+}
+
+.badge-text {
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* QUOTE PRINCIPAL */
+.instructor-main-quote {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-blue-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+    border-radius: 16px;
+    background-color: rgba(74, 144, 226, 0.05);
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
 /* RESPONSIVE DARK */
